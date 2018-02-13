@@ -39,7 +39,6 @@
 		    	vm.students = data;
 
 		    }).catch(function(e){
-		    	// debugger;
 		    	console.error(e || "Request failed");
 		    	//limiting the number of times it tries to avoid infinite loop
 		    	if (e == 503 && requestCounter <= 5) {
