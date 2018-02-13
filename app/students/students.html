@@ -1,4 +1,19 @@
-<h2>Students</h2>
-<ul>
-	<li>Here are your students...</li>
-</ul>
+<div ng-if="vm.state == 'good-data'">
+	<h2>Students</h2>
+	<p>Search: <input type="text" class="form-control ng-valid ng-dirty" ng-model="searchKeyword.Name"></p>
+	<ul ng-repeat="student in vm.students | orderBy:['Name', 'Id'] | filter: searchKeyword">
+		<li ng-click="student.showData ? student.showData = false : student.showData = true;"><a>{{student.Name}}</a></li>
+		<ul ng-if="student.showData">
+			<li>Id: {{student.Id}}</li>
+			<li>Favorite Food: {{student.FavoriteFood}}</li>
+			<li>Favorite Color: {{student.FavoriteColor}}</li>
+			<li>Favorite Movie: {{student.FavoriteMovie}}</li>
+		</ul>
+	</ul>
+</div>
+<div ng-if="vm.state == 'bad-data'">
+	<h3>Unfortunately the student data is corrupt</h3>
+</div>
+<div ng-if="vm.state == 'service-down'">
+	<h3>The data is currently unavailable. Please try again later.</h3>
+</div>
