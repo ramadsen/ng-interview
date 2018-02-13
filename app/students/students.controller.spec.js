@@ -1,11 +1,11 @@
 'use strict';
 
-describe('ngInterview module', function() {
+describe('ngInterview.students module', function() {
 
 	var $controller;
 
 	beforeEach(function() {
-		module('ngInterview');
+		module('ngInterview.students');
 		inject(function(_$controller_) {
 			$controller = _$controller_;
 		});

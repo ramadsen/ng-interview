@@ -4,7 +4,6 @@
 	angular.module('ngInterview', [
 		'ngRoute',
 		'ngInterview.currentDate',
-		'ngInterview.students',
-		'ngInterview.api'
+		'ngInterview.students'
 	]);
 })();
